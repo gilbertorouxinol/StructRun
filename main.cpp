@@ -985,6 +985,17 @@ int main(int argc, const char * argv[]) {
     // Matrix reset to zero - Stiffness Matrix - [k] (size equal to dofXdof)
     //******************************************************************************************************************
     dof = degreesOfFreedom[numberNodes-1][2];
+    int maxInDegreesOfFreedom = 0;
+    for (int i = 0; i < numberNodes; ++i){
+        for(int j = 0; j < 3; ++j){
+            if(degreesOfFreedom[i][j] > maxInDegreesOfFreedom){
+                maxInDegreesOfFreedom = degreesOfFreedom[i][j];
+            }
+        }
+    }
+    dof = maxInDegreesOfFreedom;
+    svCout << "DOF " << endl;
+    svCout << setw(12) << dof << endl;
 
     stiffnessMatrix = new double *[dof];
     for (int i = 0; i < dof; i++ ){
@@ -1040,6 +1051,7 @@ int main(int argc, const char * argv[]) {
     int nodeJ;
     int dof1, dof2, dof3, dof4, dof5, dof6;
     for(int i = 0; i < numberElements; i++){
+
         nodeI = elements[i][0];
         dof1 = degreesOfFreedom[nodeI-1][0];
         dof2 = degreesOfFreedom[nodeI-1][1];
@@ -1058,7 +1070,7 @@ int main(int argc, const char * argv[]) {
         if( dof6 != 0) incidence[i][dof6-1] = 6;
     }
 
-    svCout << "Incidence Matrix" << endl;
+    svCout << "Incidence Matrix " << endl;
     for (int i = 0; i < numberElements; ++i) {
         svCout << setw(5) << i+1;
         for (int j = 0; j < dof; ++j) {
