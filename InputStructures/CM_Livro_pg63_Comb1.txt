@@ -1,0 +1,51 @@
+Read mode - 1 automatic processing | 2 pre-processing
+1
+Number of spans
+1
+Number of floors
+2
+Height floor [m]
+5
+Width frame [m]
+10
+Elasticity modulus [kPa]
+210000000.0
+Shear modulus [kPa]
+81000000.0
+Number areas
+2
+Area 1 [m2]
+86.82e-4
+Area 2 [m2]
+84.46e-4
+Number inertias
+2
+Inertia 1 [m4]
+10450.0e-8
+Inertia 2 [m4]
+23130.0e-8
+Number fixities
+2
+Node(s) fixitie(s)
+1
+2
+Number elements with distributed loads
+2
+Element and load [kN/m]
+3 45.0
+6 33.6
+Number nodes with nodal loads
+4
+Nodes and load [kN] [kN] [kNm]
+3 13.6 -253.5 0.0
+4 0.0 -253.5 0.0
+5 15.7 -204.0 0.0
+6 0.0 -204.0 0.0
+Zoom Factor Deformability
+1000
+Zoom Factor Normal Force
+0.005
+Zoom Factor Shear Force
+0.005
+Zoom Factor Bending Moment
+0.005
